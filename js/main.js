@@ -54,9 +54,11 @@ document.querySelectorAll(".info-screen").forEach((section, index) => {
         end: "top 50%",
         scrub: 2, 
         markers: false, 
+        once: true, 
       },
     }
   );
+
 
   gsap.fromTo(
     [title, text],
@@ -77,6 +79,7 @@ document.querySelectorAll(".info-screen").forEach((section, index) => {
         end: "top 100%",
         scrub: 1.5, 
         markers: false, 
+        once: true, 
       },
     }
   );
