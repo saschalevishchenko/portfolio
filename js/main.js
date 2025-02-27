@@ -15,7 +15,12 @@ gsap.to(".intro", {
   },
 });
 
-gsap.from(".info-screen", { opacity: 0, y: 100, duration: 1, stagger: 0.3 });
+gsap.from(".info-screen", {
+  opacity: 0,
+  y: 100,
+  duration: 1,
+  stagger: 0.3, 
+});
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -28,6 +33,7 @@ document.querySelectorAll(".info-screen").forEach((section, index) => {
   const direction = isReversed ? -150 : 150;
 
   const delayFactor = index === 0 ? 2 : index === 1 ? 1.5 : 1;
+
 
   gsap.fromTo(
     img,
@@ -44,10 +50,10 @@ document.querySelectorAll(".info-screen").forEach((section, index) => {
       ease: "power4.out",
       scrollTrigger: {
         trigger: section,
-        start: "top 1%",
+        start: "top 10%", 
         end: "top 50%",
-        scrub: 2,
-        markers: false,
+        scrub: 2, 
+        markers: false, 
       },
     }
   );
@@ -67,10 +73,10 @@ document.querySelectorAll(".info-screen").forEach((section, index) => {
       ease: "elastic.out(1, 0.5)",
       scrollTrigger: {
         trigger: section,
-        start: "top 20%",
+        start: "top 10%", 
         end: "top 100%",
-        scrub: 1.5,
-        markers: false,
+        scrub: 1.5, 
+        markers: false, 
       },
     }
   );
