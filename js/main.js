@@ -67,13 +67,36 @@ document.querySelectorAll(".info-screen").forEach((section, index) => {
       ease: "elastic.out(1, 0.5)",
       scrollTrigger: {
         trigger: section,
-        start: "top 1%",
-        end: "top 50%",
+        start: "top 20%",
+        end: "top 100%",
         scrub: 1.5,
         markers: false,
       },
     }
   );
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const burger = document.querySelector(".burger");
+  const navPanel = document.querySelector(".nav-panel");
+  const body = document.body;
+  const navLinks = document.querySelectorAll(".nav-panel a");
+
+  function toggleMenu() {
+    burger.classList.toggle("active");
+    navPanel.classList.toggle("active");
+    body.classList.toggle("lock");
+  }
+
+  burger.addEventListener("click", toggleMenu);
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", function () {
+      burger.classList.remove("active");
+      navPanel.classList.remove("active");
+      body.classList.remove("lock");
+    });
+  });
 });
 
 document.getElementById("next").onclick = function () {
